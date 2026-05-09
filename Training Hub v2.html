@@ -866,10 +866,10 @@ let _wiz={data:{},step:0};
 
 // ─── PERSISTENCE ────────────────────────────────────────────────
 function loadData(){
-  try{const s=localStorage.getItem('thubV2');if(s)return JSON.parse(s);}catch(e){}
+  try{const s=localStorage.getItem('thubV2demo');if(s)return JSON.parse(s);}catch(e){}
   return{races:[buildIronman703(),buildGarminHalf()]};
 }
-function save(){localStorage.setItem('thubV2',JSON.stringify(DATA));}
+function save(){localStorage.setItem('thubV2demo',JSON.stringify(DATA));}
 
 // ─── BUILD IRONMAN 703 ───────────────────────────────────────────
 function buildIronman703(){
@@ -2182,9 +2182,9 @@ document.addEventListener('click',e=>{
 
 // ─── USER PROFILE (sidebar name) ────────────────────────────────
 function loadUserProfile(){
-  try{return JSON.parse(localStorage.getItem('thubUser')||'null');}catch(e){return null;}
+  try{return JSON.parse(localStorage.getItem('thubUserDemo')||'null');}catch(e){return null;}
 }
-function saveUserProfile(p){localStorage.setItem('thubUser',JSON.stringify(p));}
+function saveUserProfile(p){localStorage.setItem('thubUserDemo',JSON.stringify(p));}
 
 function renderSidebarUser(){
   const p=loadUserProfile()||{name:'Tony Stark',year:'2026'};
@@ -2314,11 +2314,11 @@ function saveProfileEdit(){
 // ─── THEME ───────────────────────────────────────────────────────
 function setTheme(name,el){
   document.documentElement.setAttribute('data-theme',name);
-  localStorage.setItem('thubTheme',name);
+  localStorage.setItem('thubThemeDemo',name);
   document.querySelectorAll('.theme-swatch').forEach(s=>s.classList.toggle('active',s.dataset.t===name));
 }
 (function initTheme(){
-  const t=localStorage.getItem('thubTheme')||'dark';
+  const t=localStorage.getItem('thubThemeDemo')||'dark';
   document.documentElement.setAttribute('data-theme',t);
   // Highlight active swatch after DOM ready
   requestAnimationFrame(()=>{
