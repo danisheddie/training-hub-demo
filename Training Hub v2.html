@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Training Hub — Danish Eddie</title>
+<title>Training Hub — Tony Stark</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;700;800;900&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
 <style>
@@ -873,8 +873,7 @@ function save(){localStorage.setItem('thubV2',JSON.stringify(DATA));}
 
 // ─── BUILD IRONMAN 703 ───────────────────────────────────────────
 function buildIronman703(){
-  const raceDate='2026-11-01', startDate='2026-05-11';
-  // Sun = short swim during/around kids coaching (9am-12pm). Keep easy — you're already there.
+  const raceDate='2026-11-02', startDate='2026-05-11';
   const p1=[
     {Mon:'Swim 45 min (AM) + 40 min easy run',Tue:'BASE-1 (60 min)',Wed:'35 min easy run',Fri:'Swim 45 min',Sat:'90 min Z2',Sun:'Swim 30 min easy (poolside)',note:'Assessment week',rec:false},
     {Mon:'Swim 45 min (AM) + 42 min easy run',Tue:'BASE-1 (65 min)',Wed:'40 min easy run',Fri:'Swim 48 min',Sat:'1:45 Z2',Sun:'Swim 30 min easy (poolside)',note:'',rec:false},
@@ -916,20 +915,20 @@ function buildIronman703(){
   });
   push('base',p1);push('build',p2);push('peak',p3);push('taper',p4);
   return{
-    id:'ironman-703-kenting',name:'Ironman 70.3 Kenting',type:'tri-703',date:raceDate,
-    goal:'Sub-6:00',goalNote:'Swim 0:43 · Bike 2:48 · Run 2:07',
+    id:'ironman-703-cebu',name:'Ironman 70.3 Cebu',type:'tri-703',date:raceDate,
+    goal:'Sub-6:30',goalNote:'Swim 0:45 · Bike 3:00 · Run 2:15',
     splits:[
-      {label:'Swim',dist:'1.9 km',time:'0:43',pace:'2:15/100m',cls:'swim'},
-      {label:'Bike',dist:'90 km',time:'2:48',pace:'32 km/h',cls:'bike'},
-      {label:'Run',dist:'21.1 km',time:'2:07',pace:'6:00/km',cls:'run'},
-      {label:'Total',dist:'+15 min buffer',time:'5:45',pace:'Sub-6 target',cls:'total'},
+      {label:'Swim',dist:'1.9 km',time:'0:45',pace:'2:22/100m',cls:'swim'},
+      {label:'Bike',dist:'90 km',time:'3:00',pace:'30 km/h',cls:'bike'},
+      {label:'Run',dist:'21.1 km',time:'2:15',pace:'6:23/km',cls:'run'},
+      {label:'Total',dist:'+30 min transitions',time:'6:30',pace:'Sub-6:30 target',cls:'total'},
     ],
-    profile:{Swim:'Comfortable 1–2 km, ~2:15–2:30/100m',Bike:'Casual 1–2×/week',Run:'20–40 km/week','Weekly hours':'6–8','Own swim':'Mon AM + Fri AM + Sun (poolside) = 3×/week','Kids coaching':'Fri 5–6pm · Sun 9am–12pm'},
+    profile:{Swim:'Comfortable 1–2 km, ~2:15–2:30/100m',Bike:'Casual 1–2×/week',Run:'20–40 km/week','Weekly hours':'6–8'},
     phases:[
       {id:'base',name:'The Foundation',dates:'Weeks 1–8 · May 11 – Jul 5',desc:'Build aerobic base. All Z2. Volume over intensity.',weeks:weeks.filter(w=>w.phase==='base'),note:'Graduation: comfortable 2–2.5 hr ride · 45–55 min easy run controlled · 1 km swim continuous'},
       {id:'build',name:'The Forge',dates:'Weeks 9–16 · Jul 6 – Aug 30',desc:'First bricks. FTP intervals. Tempo runs.',weeks:weeks.filter(w=>w.phase==='build'),note:'Graduation: 2:45 bike + 30 min run · 30 km/h avg flat · 1.9 km swim continuous'},
       {id:'peak',name:'The Summit',dates:'Weeks 17–22 · Aug 31 – Oct 11',desc:'Peak volume. Race simulation. Hardest weeks.',weeks:weeks.filter(w=>w.phase==='peak'),note:'Race simulation Week 20 — most important training day of the plan'},
-      {id:'taper',name:'The Approach',dates:'Weeks 23–25 · Oct 12–25',desc:'Volume drops. Intensity stays. Trust the process.',weeks:weeks.filter(w=>w.phase==='taper'),note:'Feeling flat is normal. Your body is consolidating. Do not add extra sessions.'},
+      {id:'taper',name:'The Approach',dates:'Weeks 23–25 · Oct 12 – Nov 1',desc:'Volume drops. Intensity stays. Trust the process.',weeks:weeks.filter(w=>w.phase==='taper'),note:'Feeling flat is normal. Your body is consolidating. Do not add extra sessions.'},
     ],
     gear:[
       {group:'Swim',color:'var(--swim)',items:['Wetsuit (verify water temp rules)','Goggles — primary pair','Goggles — spare pair','Anti-chafe cream','Swim cap (race provides one)']},
@@ -943,14 +942,14 @@ function buildIronman703(){
       {z:'Z4',name:'Threshold',pct:'83–89%',rpe:'7–8',feel:'One or two words, lungs burning',color:'var(--z4)'},
       {z:'Z5',name:'VO2 Max',pct:'90–100%',rpe:'9–10',feel:'Nothing. Just survive.',color:'var(--z5)'},
     ],
-    notes:'Kenting November: 28–32°C, humid. Add 10–15 min to targets. Pour water on yourself at every aid station. Electrolyte tablets mandatory.',
+    notes:'Cebu November: warm and humid conditions expected. Stay hydrated, use electrolytes every aid station, and apply sunscreen before the swim start.',
     log:{},
   };
 }
 
 // ─── BUILD GARMIN HALF MARATHON ──────────────────────────────────
 function buildGarminHalf(){
-  const raceDate='2026-10-25',startDate='2026-05-11';
+  const raceDate='2026-10-18',startDate='2026-05-11';
   const tpl=[
     // Base W1-8
     {ph:'base',Mon:'40 min easy',Wed:'35 min easy',Thu:'30 min easy',Sat:'60 min long run (Z2)',rec:false},
@@ -986,9 +985,9 @@ function buildGarminHalf(){
     return{weekNum:i+1,dates:weekRange(startDate,i),sessions:days,note:'',isRecovery:rec,brick:false,phase:ph};
   });
   return{
-    id:'garmin-half-2026',name:'Garmin Half Marathon',type:'run-half',date:raceDate,
-    goal:'Sub-1:55',goalNote:'Target pace: ~5:27/km',
-    splits:[{label:'Run',dist:'21.1 km',time:'1:55:00',pace:'5:27/km',cls:'run'}],
+    id:'city-half-2026',name:'City Half Marathon',type:'run-half',date:raceDate,
+    goal:'Sub-2:00',goalNote:'Target pace: ~5:41/km',
+    splits:[{label:'Run',dist:'21.1 km',time:'2:00:00',pace:'5:41/km',cls:'run'}],
     profile:{Run:'20–40 km/week','Weekly hours':'4–6 (run only)','Injuries':'None'},
     phases:[
       {id:'base',name:'Base',dates:'Weeks 1–8 · May 11 – Jul 5',desc:'Easy aerobic running. Build to 40–50 km/week.',weeks:weeks.filter(w=>w.phase==='base'),note:'End of phase: comfortable 90 min long run'},
@@ -1002,7 +1001,7 @@ function buildGarminHalf(){
       {z:'Z3',name:'Tempo',pct:'76–82%',rpe:'5–6',feel:'Short sentences',color:'var(--z3)'},
       {z:'Z4',name:'Intervals',pct:'83–89%',rpe:'7–8',feel:'~5:00–5:10/km effort',color:'var(--z4)'},
     ],
-    notes:'Note: this race is 7 days before Ironman 70.3 Kenting. Treat it as a goal race or a tune-up race — decide in race week.',
+    notes:'Goal race. Arrive well-rested, stick to your race pace from the gun, and treat the last 5 km as your test of fitness.',
     log:{},
   };
 }
@@ -2188,7 +2187,7 @@ function loadUserProfile(){
 function saveUserProfile(p){localStorage.setItem('thubUser',JSON.stringify(p));}
 
 function renderSidebarUser(){
-  const p=loadUserProfile()||{name:'Danish Eddie',year:'2026'};
+  const p=loadUserProfile()||{name:'Tony Stark',year:'2026'};
   const el=document.getElementById('sb-user-display');
   if(!el)return;
   el.innerHTML=`<span class="sb-user-text">${p.name} · ${p.year}</span>
@@ -2196,7 +2195,7 @@ function renderSidebarUser(){
 }
 
 function editSidebarUser(){
-  const p=loadUserProfile()||{name:'Danish Eddie',year:'2026'};
+  const p=loadUserProfile()||{name:'Tony Stark',year:'2026'};
   const el=document.getElementById('sb-user-display');
   if(!el)return;
   el.innerHTML=`
